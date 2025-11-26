@@ -9,3 +9,8 @@ variable "resources_path" {
   description = "Path to the resources directory"
   type        = string
 }
+
+variable "s3_prefix" {
+  description = "S3 prefix"
+  type        = string
+}

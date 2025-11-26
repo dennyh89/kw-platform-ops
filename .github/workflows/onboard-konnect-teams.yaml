@@ -10,6 +10,7 @@ on:
 
 env:
   TF_VAR_resources_path: ${{ github.workspace }}/teams
+  TF_VAR_s3_prefix: ${{var.S3_PREFIX}}
   TERRAFORM_DIR: ${{ github.workspace }}/terraform/konnect-teams
 
 jobs:

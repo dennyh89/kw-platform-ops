@@ -72,10 +72,10 @@ module "vault" {
 # Create S3 bucket
 resource "aws_s3_bucket" "my_bucket" {
   for_each = konnect_team.this
-  bucket = "${{ vars.S3_PREFIX }}.konnect.team.resources.${local.sanitized_team_names[each.value.name]}"
+  bucket = "${var.s3_prefix}.konnect.team.resources.${local.sanitized_team_names[each.value.name]}"
 
   tags = {
-    Name        = "${{ vars.S3_PREFIX }}.konnect.team.resources.${local.sanitized_team_names[each.value.name]}"
+    Name        = "${var.s3_prefix}.konnect.team.resources.${local.sanitized_team_names[each.value.name]}"
   }
 }
 

@@ -26,6 +26,12 @@ resource "konnect_system_account_team" "this" {
 
   account_id = konnect_system_account.this.id
 }
+# Assign the system accounts to the Analytics Admin team
+resource "konnect_system_account_team" "this" {
+  team_id = "5952c8e7-ad3c-443c-be96-b22f93011a2e"
+
+  account_id = konnect_system_account.this.id
+}
 
 ### Add the control plane creator role if team has the entitlement
 resource "konnect_system_account_role" "cp_creators" {
@@ -114,6 +120,8 @@ resource "konnect_system_account_role" "api_publishers" {
   role_name        = "Publisher"
   account_id       = konnect_system_account.this.id
 }
+
+
 
 # Create an access token for every system account
 resource "konnect_system_account_access_token" "this" {
